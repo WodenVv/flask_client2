@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %} Flask_Client-Web {% endblock %}
+
+{% block corpo %}
+
+<div class="container bg-2 text-center">
+
+    <div class="container bg-3 p-3">
+        <h2>Acesse minha API JSON Placeholder da <b style="color:  rgb(236, 156, 35);">Shoope</b></h2>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-6">
+                <a href="http://127.0.0.1:8000/user/"><img src="../static/images/user.png" width="150" height="150"></a>
+                <h3>Users</h3>
+            </div>
+
+            <div class="col-md-6">
+                <a href="http://127.0.0.1:8000/posts/" ><img src="../static/images/post.png" width="150" height="150"></a>
+                <h3>Posts</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <a href="http://127.0.0.1:8000/todos/" ><img src="../static/images/todo.png" width="150" height="150"></a>
+                <h3>ToDos</h3>
+            </div>
+            <div class="col-md-6">
+                <a href="http://127.0.0.1:8000/comments/" ><img src="../static/images/comment.png" width="150" height="150"></a>
+                <h3>Comments</h3>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $.get('/get_data', function(data) {
+            var output = '<ul>';
+            for (var i in data) {
+                output += '<li>' + data[i].title + '</li>';
+            }
+            output += '</ul>';
+            $('#data').html(output);
+        });
+    });
+</script>
+{% endblock %}

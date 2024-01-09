@@ -1,0 +1,14 @@
+.body {
+    background-color: rgb(236, 156, 35);
+}
+.bg-2 {
+    margin-top: 5%;
+    margin-left: 20%;
+    margin-right: 20%;
+    background-color: white;
+    border-radius: 25px;
+}
+.bg-3 {
+    margin-left: 30%;
+    margin-right: 30%;
+}
